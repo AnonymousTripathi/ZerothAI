@@ -26,7 +26,7 @@ const App = () => {
     if (!msg) return;
 
     try {
-      const genAI = new GoogleGenerativeAI("AIzaSyBalgTO8oKGwSR0jPIlIfSiN5wsikmgJ1A"); // Replace with your actual API key
+      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY); 
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
       const result = await model.generateContent(msg);
 
@@ -58,7 +58,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Scroll to the bottom when new messages are added
+    
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
@@ -72,13 +72,13 @@ const App = () => {
               <button id='newChatBtn' className='bg-[#181818] p-[10px] rounded-[30px] cursor-pointer text-[14px] px-[20px]' onClick={newChat}>New Chat</button>
             </div>
 
-            <div className="messages flex-grow overflow-y-auto p-4"> {/* Added flex-grow and overflow-y-auto */}
+            <div className="messages flex-grow overflow-y-auto p-4"> 
               {messages?.map((msg, index) => (
                 <div key={index} className={`mb-2 p-3 rounded-lg ${msg.type === 'userMsg' ? 'bg-[#181818] text-right' : 'bg-[#282828] text-left'}`}>
                   {msg.text}
                 </div>
               ))}
-              <div ref={messagesEndRef} /> {/* Anchor for scrolling */}
+              <div ref={messagesEndRef} /> 
             </div>
           </div>
         ) : (
