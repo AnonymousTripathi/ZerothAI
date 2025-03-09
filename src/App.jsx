@@ -68,7 +68,7 @@ const App = () => {
         {isResponseScreen ? (
           <div className='h-[80vh] flex flex-col'> {/* Use flexbox to manage layout */}
             <div className="header pt-[25px] flex items-center justify-between w-[100vw] px-[300px]">
-              <h2 className='text-2xl bg-gradient-to-r from-blue-700 via-pink-400 to-black'>ZenithAl</h2>
+              <h2 className='text-2xl bg-gradient-to-r from-blue-700 via-pink-400 to-black'>ZerothAl</h2>
               <button id='newChatBtn' className='bg-[#181818] p-[10px] rounded-[30px] cursor-pointer text-[14px] px-[20px]' onClick={newChat}>New Chat</button>
             </div>
 
@@ -83,7 +83,7 @@ const App = () => {
           </div>
         ) : (
           <div className="middle h-[80vh] flex items-center flex-col justify-center">
-            <h1 className='bg-gradient-to-r from-blue-500 via-pink-600 to-black-500 text-4xl'>ZenithAI</h1>
+            <h1 className='bg-gradient-to-r from-blue-500 via-pink-600 to-black-500 text-4xl'>ZerothAI</h1>
             <div className="boxes mt-[30px] flex items-center gap-2">
               <div className="card rounded-lg cursor-pointer transition-all hover:bg-[#201f1f] px-[20px] relative min-h-[20vh] bg-[#181818] p-[10px]" onClick={() => { setMessage("What is coding ? How we can learn it."); setisResponseScreen(true); hitRequest(); }}>
                 <p className='text-[18px]'>What is coding ? <br /> How we can learn it.</p>
@@ -107,10 +107,10 @@ const App = () => {
 
         <div className="bottom w-[100%] flex flex-col items-center">
           <div className="inputBox w-[60%] text-[25px] py-[7px] flex items-center bg-[#181818] rounded-[30px]">
-            <input value={message} onChange={(e) => { setMessage(e.target.value); }} type="text" className='p-[10px] pl-[15px] bg-transparent flex-1 outline-none border-none' placeholder='Ask Zenith...' id='messageBox' onKeyDown={handleKeyPress} />
+            <input value={message} onChange={(e) => { setMessage(e.target.value); }} type="text" className='p-[10px] pl-[15px] bg-transparent flex-1 outline-none border-none' placeholder='Ask Zeroth...' id='messageBox' onKeyDown={handleKeyPress} />
             {message && <i className='text-blue-600 text-[22px] mr-5 cursor-pointer' onClick={hitRequest}><IoSend /></i>}
           </div>
-          <p className='text-[gray] text-[17px] my-4'>ZenithAI developed by Harsh Tripathi. This AI uses Gemini API for giving the responses</p>
+          <p className='text-[gray] text-[17px] my-4'>ZerothAI developed by Harsh Tripathi. This AI uses Gemini API for giving the responses</p>
         </div>
       </div>
     </>
